@@ -35,33 +35,34 @@
         <div class="col-sm">
           Individual Immunities: <%= @owner.individual_immunities %>
         </div>
+        <div class="col-sm">
+          Tribal Immunities: <%= @owner.tribal_immunities %>
+        </div>
       </div>
 
       <div class="row">
         <div class="col-sm">
-          Tribal Immunities: <%= @owner.tribal_immunities %>
+          Winners: <%= @owner.winners %>
         </div>
+        <div class="col-sm">
+          2nd Place Winners: <%= @owner.second_placers %>
+        </div>
+        <div class="col-sm">
+          3rd Place Winners: <%= @owner.third_placers %>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="col-sm">
           Rewards: <%= @owner.rewards %>
         </div>
         <div class="col-sm">
-          Total Points: <%= @owner.total_points %>
+          quitters: <%= @owner.quitters %>
+        </div>
+        <div class="col-sm">
+          Medical Evacs: <%= @owner.med_evacs %>
         </div>
       </div>
-
-        <div class="col-sm">
-          Total Points: <%= @owner.total_points %>
-        </div>
-        <div class="col-sm">
-          Total Points: <%= @owner.total_points %>
-        </div>
-        <div class="col-sm">
-          Total Points: <%= @owner.total_points %>
-        </div>
-        <div class="col-sm">
-          Total Points: <%= @owner.total_points %>
-        </div>
-
 
     </div>
   </body>
