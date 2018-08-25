@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  total_points: 1
+  hidden_idols: 1
+  successful_immunities: 1
+  individual_immunities: 1
+  tribal_immunities: 1
+  rewards: 1
+  days: 1
+  jury_members: 1
+  winners: 1
+  second_placers: 1
+  third_placers: 1
+  quitters: 1
+  med_evacs: 1
+  season_favourites: 1
+  season_victories: 1
+
+two:
+  name: MyString
+  total_points: 1
+  hidden_idols: 1
+  successful_immunities: 1
+  individual_immunities: 1
+  tribal_immunities: 1
+  rewards: 1
+  days: 1
+  jury_members: 1
+  winners: 1
+  second_placers: 1
+  third_placers: 1
+  quitters: 1
+  med_evacs: 1
+  season_favourites: 1
+  season_victories: 1

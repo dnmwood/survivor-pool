@@ -1,0 +1,62 @@
+<div class="container">
+  <h1>Let's edit this owner</h1>
+  <div class="row">
+    <div class="col-md-5 col-md-12">
+      <%= form_for(@owner) do |f| %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+
+        <%= f.label 'Wins' %>
+        <%= f.number_field :season_victories, class: 'form-control' %>
+
+        <%= f.label 'total points' %>
+        <%= f.number_field :total_points, class: 'form-control' %>
+
+        <%= f.label 'hidden immunity idols' %>
+        <%= f.number_field :hidden_idols, class: 'form-control' %>
+
+        <%= f.label 'successful immunity plays' %>
+        <%= f.number_field :successful_immunities, class: 'form-control' %>
+
+        <%= f.label 'individual immunities' %>
+        <%= f.number_field :individual_immunities, class: 'form-control' %>
+
+        <%= f.label 'tribal immunities' %>
+        <%= f.number_field :tribal_immunities, class: 'form-control' %>
+
+        <%= f.label 'rewards' %>
+        <%= f.number_field :rewards, class: 'form-control' %>
+
+        <%= f.label 'days' %>
+        <%= f.number_field :days, class: 'form-control' %>
+
+        <%= f.label 'jury members' %>
+        <%= f.number_field :jury_members, class: 'form-control' %>
+
+        <%= f.label 'Winners' %>
+        <%= f.number_field :winners, class: 'form-control' %>
+
+        <%= f.label 'second place winners' %>
+        <%= f.number_field :second_placers, class: 'form-control' %>
+
+        <%= f.label 'third place winners' %>
+        <%= f.number_field :third_placers, class: 'form-control' %>
+
+        <%= f.label 'quitters' %>
+        <%= f.number_field :quitters, class: 'form-control' %>
+
+        <%= f.label 'medical evacs' %>
+        <%= f.number_field :med_evacs, class: 'form-control' %>
+
+        <%= f.label 'season favourites' %>
+        <%= f.number_field :season_favourites, class: 'form-control' %>
+
+        <%= f.label 'Image URL:' %>
+        <%= f.text_field :image_url, class: 'form-control' %>
+
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

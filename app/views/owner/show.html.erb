@@ -1,0 +1,68 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>Profile Page</title>
+  </head>
+  <body>
+
+    <div class="info-container">
+      <img src="<%= @owner.image_url %>" alt="" class="show-image">
+    </div>
+
+    <div class="main-text">
+      <%= @owner.name %>
+    </div>
+
+    <div class="sub-text">
+      Wins: <%= @owner.season_victories %>
+    </div>
+
+    <div class="sub-text">
+      Total Points: <%= @owner.total_points %>
+    </div>
+
+    <div class="container show-container sub-text">
+
+      <div class="row">
+        <div class="col-sm">
+          Hidden Immunity Idols: <%= @owner.hidden_idols %>
+        </div>
+        <div class="col-sm">
+          Successful Idols: <%= @owner.successful_immunities %>
+        </div>
+        <div class="col-sm">
+          Individual Immunities: <%= @owner.individual_immunities %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          Tribal Immunities: <%= @owner.tribal_immunities %>
+        </div>
+        <div class="col-sm">
+          Rewards: <%= @owner.rewards %>
+        </div>
+        <div class="col-sm">
+          Total Points: <%= @owner.total_points %>
+        </div>
+      </div>
+
+        <div class="col-sm">
+          Total Points: <%= @owner.total_points %>
+        </div>
+        <div class="col-sm">
+          Total Points: <%= @owner.total_points %>
+        </div>
+        <div class="col-sm">
+          Total Points: <%= @owner.total_points %>
+        </div>
+        <div class="col-sm">
+          Total Points: <%= @owner.total_points %>
+        </div>
+
+
+    </div>
+  </body>
+</html>

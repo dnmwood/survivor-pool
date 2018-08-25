@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <title>Survivor Fantasy</title>
+  </head>
+  <body>
+    <div class="container home-container">
+        <div class="row vertical-align">
+          <!-- <div class="col-md-4 col-md-12"> -->
+            <% @owners.each do |x| %>
+              <div class="col-sm-4">
+                <div class="image-container">
+                  <%= link_to image_tag(x.image_url), owner_path(x) %>
+                </div>
+                <br>
+                <div class="home-text">
+                  <%= x.name %>
+                  <br>
+                  <%= link_to "edit", edit_owner_path(x) %>
+                </div>
+              </div>
+            <% end %>
+          <!-- </div> -->
+        </div>
+    </div>
+  </body>
+</html>
