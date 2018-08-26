@@ -12,14 +12,13 @@
           <!-- <div class="col-md-4 col-md-12"> -->
             <% @owners.each do |x| %>
               <div class="col-sm-4">
-                <div class="image-container">
+                <!-- <div class="image-container">
                   <%= link_to image_tag(x.image_url), owner_path(x) %>
-                </div>
+                </div> -->
                 <br>
                 <div class="home-text">
-                  <%= x.name %>
+                  <%= x.teams.first.name %>
                   <br>
-                  <%= link_to "edit", edit_owner_path(x) %>
                 </div>
               </div>
             <% end %>

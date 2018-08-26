@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :owner
+  resources :owner do
+    resources :teams
+  end
+  
+  resources :players
 
   root 'owner#index'
   get 'home', :to => "owner#index"
