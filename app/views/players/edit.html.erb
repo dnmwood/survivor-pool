@@ -1,2 +1,59 @@
-<h1>Players#edit</h1>
-<p>Find me in app/views/players/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-12">
+      <%= form_for ["owner", @team, @player] do |f| %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+
+        <%= f.label 'Description' %>
+        <%= f.text_field :description, class: 'form-control' %>
+
+        <%= f.label 'Active' %>
+        <%= f.check_box :active, class: 'form-control' %>
+
+        <%= f.label 'Days' %>
+        <%= f.number_field :days, class: 'form-control' %>
+
+        <%= f.label 'Hidden Immunity Idols' %>
+        <%= f.number_field :hidden_immunities, class: 'form-control' %>
+
+        <%= f.label 'Hidden Immunity Successes' %>
+        <%= f.number_field :hidden_immunity_successes, class: 'form-control' %>
+
+        <%= f.label 'Individual Immunities' %>
+        <%= f.number_field :individual_immunities, class: 'form-control' %>
+
+        <%= f.label 'Tribal Immunities' %>
+        <%= f.number_field :tribal_immunities, class: 'form-control' %>
+
+        <%= f.label 'Rewards' %>
+        <%= f.number_field :rewards, class: 'form-control' %>
+
+        <%= f.label 'Jury Member' %>
+        <%= f.check_box :jury_member, class: 'form-control' %>
+
+        <%= f.label 'Winner' %>
+        <%= f.check_box :winner, class: 'form-control' %>
+
+        <%= f.label 'Second Place Winner' %>
+        <%= f.check_box :second_place, class: 'form-control' %>
+
+        <%= f.label 'Third Place Winner' %>
+        <%= f.check_box :third_place, class: 'form-control' %>
+
+        <%= f.label 'Quitter!' %>
+        <%= f.check_box :quitter, class: 'form-control' %>
+
+        <%= f.label 'Medical Evac' %>
+        <%= f.check_box :medical_evac, class: 'form-control' %>
+
+        <%= f.label 'Season Favourite' %>
+        <%= f.check_box :season_favourite, class: 'form-control' %>
+
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+
+      <% end %>
+    </div>
+  </div>
+</div>

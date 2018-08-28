@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-12">
+      <%= form_for ["owner", @team, @player] do |f| %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+
+        <%= f.label 'Description' %>
+        <%= f.text_field :description, class: 'form-control' %>
+
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+
+      <% end %>
+    </div>
+  </div>
+</div>

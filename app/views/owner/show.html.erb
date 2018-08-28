@@ -32,6 +32,9 @@
         <div class="col-sm">
           Successful Idols: <%= @owner.successful_immunities %>
         </div>
+      </div>
+
+      <div class="row">
         <div class="col-sm">
           Individual Immunities: <%= @owner.individual_immunities %>
         </div>
@@ -47,15 +50,18 @@
         <div class="col-sm">
           2nd Place Winners: <%= @owner.second_placers %>
         </div>
-        <div class="col-sm">
-          3rd Place Winners: <%= @owner.third_placers %>
-        </div>
       </div>
 
       <div class="row">
         <div class="col-sm">
+          3rd Place Winners: <%= @owner.third_placers %>
+        </div>
+        <div class="col-sm">
           Rewards: <%= @owner.rewards %>
         </div>
+      </div>
+
+      <div class="row">
         <div class="col-sm">
           quitters: <%= @owner.quitters %>
         </div>

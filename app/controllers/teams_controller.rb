@@ -24,12 +24,13 @@ class TeamsController < ApplicationController
   end
 
   def create
+    @owner = Owner.find(params[:owner_id])
     @team = Team.new(team_params)
 
     @team.owner_id = @owner.id
 
-    if team.save
-      redirect_to root_url, notice: "You have created an team!"
+    if @team.save
+      redirect_to root_url, notice: "You have created a team!"
     end
   end
 
