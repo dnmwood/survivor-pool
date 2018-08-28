@@ -4,21 +4,18 @@
     <meta charset="utf-8">
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <title>Survivor Fantasy</title>
   </head>
   <body>
 
-    <audio src="assets/survivor.mp3" autoplay>
-    </audio>
-
     <div class="container home-container">
+      <div class="header-image"><img src="https://vignette.wikia.nocookie.net/animaljam/images/2/2b/Survivor_Logo.png/revision/latest?cb=20131203195138" alt=""></div>
         <div class="row vertical-align">
-          <!-- <div class="col-md-4 col-md-12"> -->
+
             <% @owners.each do |x| %>
               <div class="col-sm-4">
-                <!-- <div class="image-container">
-                  <%= link_to image_tag(x.image_url), owner_path(x) %>
-                </div> -->
+
                 <br>
                 <div class="home-text">
                   <%= x.teams.first.name %>
@@ -41,42 +38,51 @@
 
                         </tr>
                       </thead>
-
+                      <% teamPoints = 0 %>
                       <% teamPlayers.each do |player| %>
 
-                      <% totalPoints = (player.hidden_immunities * 5) + (player.hidden_immunity_successes * 3) + (player.individual_immunities * 5) + (player.tribal_immunities * 2) + (player.rewards * 3) + (player.days) %>
+                      <% playerPoints = (player.hidden_immunities * 5) + (player.hidden_immunity_successes * 3) + (player.individual_immunities * 5) + (player.tribal_immunities * 2) + (player.rewards * 3) + (player.days) %>
                       <% if player.jury_member == true %>
-                        <% totalPoints += 3 %>
+                        <% playerPoints += 3 %>
                       <% end %>
 
                       <% if player.winner == true %>
-                        <% totalPoints += 25 %>
+                        <% playerPoints += 25 %>
                       <% elsif player.second_place == true %>
-                        <% totalPoints += 15 %>
+                        <% playerPoints += 15 %>
                       <% elsif player.third_place == true %>
-                        <% totalPoints += 10 %>
+                        <% playerPoints += 10 %>
                       <% end %>
 
                       <% if player.season_favourite == true %>
-                        <% totalPoints += 10 %>
+                        <% playerPoints += 10 %>
                       <% end %>
 
                       <% if player.medical_evac == true %>
-                        <% totalPoints += 5 %>
+                        <% playerPoints += 5 %>
                       <% end %>
 
                       <% if player.quitter == true %>
-                        <% totalPoints -= 10 %>
+                        <% playerPoints -= 10 %>
                       <% end %>
+
                         <tbody>
 
                           <tr>
-                            <th scope="row"><%= player.name %></th>
-                            <td><%= totalPoints %></td>
+                            <th scope="row">
+                              <div class="player-icon"><%= link_to '<i class="fas fa-user-edit"></i>'.html_safe, edit_owner_team_player_path(Owner.find(Team.find(player.team_id).owner_id), player.team_id ,player) %></div>
+                              <div class="player-row"><%= player.name %></div>
+                            </th>
+                            <td class="player-row player-points"><%= playerPoints %></td>
                           </tr>
 
-                        </tbody>
+                        <% teamPoints += playerPoints  %>
                       <% end %>
+                        <tr>
+                          <th scope="row end-row">total</th>
+                          <td><%= teamPoints %></td>
+                        </tr>
+                      </tbody>
                       </table>
                     <% end %>
                   </div>

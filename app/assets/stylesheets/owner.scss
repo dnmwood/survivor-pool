@@ -16,6 +16,18 @@
   text-align: center;
 }
 
+.player-row {
+  font-size: 16px;
+}
+
+.player-points {
+  font-size: 20px;
+}
+
+.player-icon {
+  float: left;
+}
+
 .player-table {
   margin-top: 20px;
 }
@@ -53,12 +65,12 @@
   background: #eff2f7;
 }
 
-.welcome-text {
-  margin-top: 10%;
-  margin-bottom: 30px;
-  text-align: center;
-  font-family: 'Raleway', sans-serif;
-}
+// .welcome-text {
+//   margin-top: 8%;
+//   margin-bottom: 30px;
+//   text-align: center;
+//   font-family: 'Raleway', sans-serif;
+// }
 
 .home-text {
   font-family: 'Raleway', sans-serif;
@@ -71,10 +83,21 @@
 
 .home-container {
   margin: auto;
-  margin-top: 12%;
+  margin-top: 2%;
   padding: 20px;
   padding-top: 30px;
   border-radius: 30px;
+  @media screen and (max-width: 576px) {
+    margin-top: 3%;
+  }
+}
+
+.header-image {
+  margin-bottom: 2%;
+  @media screen and (max-width: 576px) {
+    display: none;
+    margin-bottom: 0%;
+  }
 }
 
 .image-container {
