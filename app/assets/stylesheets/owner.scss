@@ -12,6 +12,10 @@
 //    -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.jpg',sizingMethod='scale')";
 // }
 
+.menuClosed {
+  overflow: hidden;
+}
+
 .container {
   text-align: center;
 }
@@ -39,7 +43,7 @@
 }
 
 .sub-text {
-  font-family: 'Raleway', sans-serif;
+  // font-family: 'Raleway', sans-serif;
   font-size: 18px;
   text-align: center;
 }
@@ -73,12 +77,16 @@
 // }
 
 .home-text {
-  font-family: 'Raleway', sans-serif;
+  // font-family: 'Raleway', sans-serif;
   font-size: 20px;
 }
 
 .info-container {
   text-align: center;
+}
+
+.player-inactive {
+  background: #ffcece;
 }
 
 .home-container {

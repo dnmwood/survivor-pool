@@ -20,7 +20,7 @@
                 <div class="home-text">
                   <%= x.teams.first.name %>
                   <br>
-                  <%= link_to 'add player', new_owner_team_player_path(owner_id = x.id, team_id = x.teams.first.id) %>
+                  <%= link_to 'add player', new_owner_player_path(x.id) %>
                   <br>
 
                   <!-- HERE WE'RE GONNA LOOP THROUGH TEAM PLAYERS -->
@@ -34,49 +34,30 @@
                         <tr>
                           <th scope="col">Player</th>
                           <th scope="col">Points</th>
-
-
                         </tr>
                       </thead>
                       <% teamPoints = 0 %>
                       <% teamPlayers.each do |player| %>
-
-                      <% playerPoints = (player.hidden_immunities * 5) + (player.hidden_immunity_successes * 3) + (player.individual_immunities * 5) + (player.tribal_immunities * 2) + (player.rewards * 3) + (player.days) %>
-                      <% if player.jury_member == true %>
-                        <% playerPoints += 3 %>
-                      <% end %>
-
-                      <% if player.winner == true %>
-                        <% playerPoints += 25 %>
-                      <% elsif player.second_place == true %>
-                        <% playerPoints += 15 %>
-                      <% elsif player.third_place == true %>
-                        <% playerPoints += 10 %>
-                      <% end %>
-
-                      <% if player.season_favourite == true %>
-                        <% playerPoints += 10 %>
-                      <% end %>
-
-                      <% if player.medical_evac == true %>
-                        <% playerPoints += 5 %>
-                      <% end %>
-
-                      <% if player.quitter == true %>
-                        <% playerPoints -= 10 %>
-                      <% end %>
-
+                        <% teamPoints += player.points %>
                         <tbody>
-
-                          <tr>
+                        <% if player.active == true %>
+                          <tr class="player-active">
                             <th scope="row">
-                              <div class="player-icon"><%= link_to '<i class="fas fa-user-edit"></i>'.html_safe, edit_owner_team_player_path(Owner.find(Team.find(player.team_id).owner_id), player.team_id ,player) %></div>
-                              <div class="player-row"><%= player.name %></div>
+                              <div class="player-icon"><%= link_to '<i class="fas fa-user-edit"></i>'.html_safe, edit_owner_player_path(player.player_owner_id, player) %></div>
+                              <div class="player-row"><%= link_to player.name, owner_player_path(player.player_owner_id, player) %></div>
                             </th>
-                            <td class="player-row player-points"><%= playerPoints %></td>
+                            <td class="player-row player-points"><%= player.points %></td>
                           </tr>
 
-                        <% teamPoints += playerPoints  %>
+                        <% else %>
+                          <tr class="player-inactive">
+                            <th scope="row">
+                              <div class="player-icon"><%= link_to '<i class="fas fa-user-edit"></i>'.html_safe, edit_owner_player_path(player.player_owner_id, player) %></div>
+                              <div class="player-row"><%= link_to player.name, owner_player_path(player.player_owner_id, player) %></div>
+                            </th>
+                            <td class="player-row player-points"><%= player.points %></td>
+                          </tr>
+                        <% end %>
                       <% end %>
                         <tr>
                           <th scope="row end-row">total</th>

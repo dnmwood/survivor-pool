@@ -6,7 +6,8 @@ console.log("hello")
 //     snd.play();
 // }, false);
 
-$(function() {
-  $(".header-image").click(function() {
-    alert("hello");
+  $(function() {
+    $("#table-1").click(function() {
+      $("#table-1").toggleClass("menuOpen")
+    });
   });

@@ -1,2 +1,76 @@
-<h1>Players#show</h1>
-<p>Find me in app/views/players/show.html.erb</p>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container profile-container">
+      <div class="row">
+        <div class="col-md-12 profile-img">
+          <img src="<%= @player.player_image_url %>" alt="<%= @player.player_image_url %>">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="profile-title"><%= @player.name %></h1>
+        </div>
+        <div class="col-md-12">
+          <% if @player.active == true %>
+            <p scope="row"> <span class="profile-span span-active">Active</span> </p>
+            <img src="https://bit.camp/img/fire.gif" alt="" class="fire-image">
+          <% else %>
+            <p scope="row"> <span class="profile-span span-inactive">Inactive</span> </p>
+          <% end %>
+        </div>
+        <div class="points-cont">
+          <div class="col-md-12 profile-points">
+            <h4>Points: <%= @player.points %></h4>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <p class="profile-desc"><%= @player.description %></p>
+        </div>
+        <div class="col-md-3">
+          <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_owner_player_path %>
+        </div>
+
+
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Days Active</th>
+          <th scope="col">Hidden Idols</th>
+          <th scope="col">Correct Idols</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @player.days %></td>
+          <td><%= @player.hidden_immunities %></td>
+          <td><%= @player.hidden_immunity_successes %></td>
+        </tr>
+        <tr>
+          <th scope="col">Ind. Immunities</th>
+          <th>Trib. Immunities</th>
+          <th>Jury Member</th>
+        </tr>
+        <tr>
+          <td scope="row"><%= @player.individual_immunities %></td>
+          <td><%= @player.tribal_immunities %></td>
+          <% if @player.jury_member == true %>
+            <td> Yes </td>
+          <% else %>
+            <td> No </td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="del-container">
+      <%= button_to "DELETE PLAYER", {:controller => :players,
+            :action => 'destroy', :id => @player.id }, :method => :delete, :class => "del-button" %>
+    </div>
+  </body>
+</html>

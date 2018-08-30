@@ -1,3 +1,94 @@
 // Place all the styles related to the players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile-container {
+  position:relative;
+  margin: auto;
+  text-align: center;
+  margin-top: 2%;
+  padding: 20px;
+  padding-top: 30px;
+  border-radius: 30px;
+  @media screen and (max-width: 576px) {
+    margin-top: 3%;
+  }
+}
+
+.profile-edit-link {
+  text-align: center;
+  color: white;
+  background: lightblue;
+  margin-left: 10px;
+}
+
+.profile-title {
+  margin-top: 0.7em;
+  margin-bottom: 0.5em;
+}
+
+.profile-row {
+  border: 1px solid lightgrey;
+}
+
+img {
+  object-fit: contain;
+  width: 200px;
+  height: 200px;
+}
+
+.fire-image {
+  margin-top: -30px;
+  margin-bottom: 6px;
+  object-fit: contain;
+  width: 80px;
+  height: 80px;
+}
+
+.profile-span {
+  border-radius: 5px;
+  color: white;
+  padding: 8px;
+  font-weight: 1000;
+}
+.span-active {
+  background: #00e600;
+}
+.span-inactive {
+  background: red;
+}
+@media screen and (max-width: 575px) {
+  .points-cont {
+    padding-top: 6px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    background: #9b9b9b;
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+.profile-desc {
+  margin-top: 5px;
+}
+
+.points-cont {
+  text-align: center;
+  margin: auto;
+}
+
+.edit-container {
+  margin-bottom: 20px;
+}
+
+.del-container {
+  border-top: 1px solid lightgrey;
+  padding: 20px;
+  text-align: right;
+}
+.del-button {
+  background: red;
+  border-radius: 5px;
+  color: white;
+}
