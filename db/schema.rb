@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180830171102) do
 
-  create_table "owners", force: :cascade do |t|
+  create_table "owners", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.integer "total_points"
     t.integer "hidden_idols"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180830171102) do
     t.string "image_url"
   end
 
-  create_table "players", force: :cascade do |t|
+  create_table "players", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "description"
     t.integer "points", default: 0
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20180830171102) do
     t.string "player_image_url"
   end
 
-  create_table "teams", force: :cascade do |t|
+  create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "owner_id"
     t.datetime "created_at", null: false
