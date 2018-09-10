@@ -9,6 +9,24 @@
   </head>
   <body>
 
+    <div class="scoreboard">
+      <div class="container">
+        <div class="row">
+          <% @owners.each do |o| %>
+            <div class="col-sm-4">
+              <% score_total = 0 %>
+              <% o.teams.first.players.each do |p| %>
+                <% score_total += p.points %>
+              <% end %>
+            <%= o.name + ":" %>
+            <%= score_total %>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
     <div class="container home-container">
       <div class="header-image"><img src="https://bit.camp/img/fire.gif" alt="" class="fire-image"><img src="https://vignette.wikia.nocookie.net/animaljam/images/2/2b/Survivor_Logo.png/revision/latest?cb=20131203195138" alt=""><img src="https://bit.camp/img/fire.gif" alt="" class="fire-image"></div>
         <div class="row vertical-align">
