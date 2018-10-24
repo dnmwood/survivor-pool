@@ -14,6 +14,8 @@ gem 'rails', '~> 5.1.6'
 gem 'bootstrap', '~> 4.1.3'
 # mysql2
 gem 'mysql2'
+# mini racer gem for autoprefixer
+gem 'mini_racer'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # jQuery

@@ -62,7 +62,7 @@ end
   def calc_player_points(pl)
 
     pl_params = params[:player]
-    count = (pl_params[:hidden_immunities].to_i * 5) + (pl_params[:hidden_immunity_successes].to_i * 3) + (pl_params[:individual_immunities].to_i * 3) + (pl_params[:tribal_immunities].to_i * 3) + (pl_params[:rewards].to_i * 3) + (pl_params[:days].to_i)
+    count = (pl_params[:hidden_immunities].to_i * 5) + (pl_params[:hidden_immunity_successes].to_i * 3) + (pl_params[:individual_immunities].to_i * 3) + (pl_params[:tribal_immunities].to_i * 3) + (pl_params[:rewards].to_i * 3) + (pl_params[:days].to_i * 0.5)
 
     if pl.jury_member == true
       count += 3
